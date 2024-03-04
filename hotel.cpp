@@ -63,118 +63,99 @@ int main()
     cout << "\t\t\t\t";
     cout << "6.STING        - 20 " << endl;
     cout << "\t\t\t\t";
-    cout << "you`r Order :" << endl;
+    cout << "7.TOTAL BILL      - 20 " << endl;
     cout << "\t\t\t\t";
-    cin >> order;
-
-    switch (order)
+    do
     {
-    case 1:
+        cout << "you`r Order :" << endl;
         cout << "\t\t\t\t";
-        cout << "\t\t\t\t";
-        cout << "quantities :" << endl;
-        cout << "\t\t\t\t";
-        cout << "\t\t\t\t";
-        cin >> quantities;
+        cin >> order;
 
-        totalbill = 120 * quantities;
-        netbill = totalbill / 18;
+        switch (order)
+        {
+        case 1:
 
-        obj.show();
-        cout << "\t\t\t\t";
-        cout << " ORDER TO BHAJIPAV " << endl;
-        cout << "\t\t\t\t";
-        cout << "total bill :" << netbill + totalbill;
-        cout << "\t\t\t\t";
+            cout << "\t\t\t\t";
+            cout << "quantities :" << endl;
 
-        break;
-    case 2:
-        cout << "\t\t\t\t";
-        cout << "quantities :" << endl;
-        cout << "\t\t\t\t";
-        cin >> quantities;
+            cout << "\t\t\t\t";
+            cin >> quantities;
 
-        totalbill = 25 * quantities;
-        netbill = totalbill / 18;
+            totalbill = totalbill + (120 * quantities);
+           
+            break;
 
-        obj.show();
-        cout << "\t\t\t\t";
-        cout << " ORDER TO VADAPAV " << endl;
-        cout << "\t\t\t\t";
-        cout << "total bill :" << netbill + totalbill;
-        cout << "\t\t\t\t";
+        case 2:
+            cout << "\t\t\t\t";
+            cout << "quantities :" << endl;
+            cout << "\t\t\t\t";
+            cin >> quantities;
 
-        break;
-    case 3:
-        cout << "\t\t\t\t";
-        cout << "quantities :" << endl;
-        cout << "\t\t\t\t";
-        cin >> quantities;
+            totalbill = totalbill + (25 * quantities);
+            break;
 
-        totalbill = 150 * quantities;
-        netbill = totalbill / 18;
+        case 3:
+            cout << "\t\t\t\t";
+            cout << "quantities :" << endl;
+            cout << "\t\t\t\t";
+            cin >> quantities;
+            totalbill = totalbill + (150 * quantities);
 
-        obj.show();
-        cout << " ORDER TO DHOSA " << endl;
-        cout << "total bill :" << netbill + totalbill;
+            break;
+        case 4:
 
-        break;
-    case 4:
+            cout << "\t\t\t\t";
+            cout << "quantities :" << endl;
+            cout << "\t\t\t\t";
 
-        cout << "\t\t\t\t";
-        cout << "quantities :" << endl;
-        cout << "\t\t\t\t";
-        cout << "\t\t\t\t";
-        cin >> quantities;
+            cin >> quantities;
 
-        totalbill = 100 * quantities;
-        netbill = totalbill / 18;
+            totalbill = totalbill + (100 * quantities);
 
-        obj.show();
-        cout << "\t\t\t\t";
-        cout << " ORDER TO ALO PRATHA " << endl;
-        cout << "\t\t\t\t";
-        cout << "tORDERbTOl :" << netbill + totalbill;
+            break;
+        case 5:
+            cout << "\t\t\t\t";
+            cout << "quantities :" << endl;
+            cout << "\t\t\t\t";
+            cin >> quantities;
 
-        break;
-    case 5:
-        cout << "\t\t\t\t";
-        cout << "quantities :" << endl;
-        cout << "\t\t\t\t";
-        cin >> quantities;
+            cout << "\t\t\t\t";
+            cout << "GST :" << netbill << endl;
+            totalbill = totalbill + 80 * quantities;
 
-        totalbill = 80 * quantities;
-        netbill = totalbill / 18;
+            break;
+        case 6:
+            cout << "\t\t\t\t";
+            cout << "quantities :" << endl;
+            cout << "\t\t\t\t";
+            cin >> quantities;
 
-        obj.show();
-        cout << "\t\t\t\t";
-        cout << " ORDER TO SANDWISH " << endl;
-        cout << "\t\t\t\t";
-        cout << "total bill :" << netbill + totalbill;
-        cout << "\t\t\t\t";
+            totalbill = totalbill + (20 * quantities);
 
-        break;
-    case 6:
-        cout << "\t\t\t\t";
-        cout << "quantities :" << endl;
-        cout << "\t\t\t\t";
-        cin >> quantities;
+            break;
+        case 7:
+            // total bill
+            cout << "**************************************total bill********************************************" << endl;
+            cout << "\t\t\t\t";
+            cout << "TOTAL BILL: " << totalbill << endl;
+            cout << "\t\t\t\t";
 
-        totalbill = 20 * quantities;
-        netbill = totalbill / 18;
+            // gst amount
+            gst = totalbill / 18;
+            cout << "GST  18%    : " << gst << endl;
+            cout << "\t\t\t\t";
 
-        obj.show();
-        cout << "\t\t\t\t";
-        cout << " ORDER TO STING " << endl;
-        cout << "\t\t\t\t";
-        cout << "total bill :" << netbill + totalbill;
-        cout << "\t\t\t\t";
+            // total bill
+            cout << "TOTAL BILL : " << totalbill + gst << endl;
+            cout << "\t\t\t\t";
 
-        break;
+            exit(0);
+            break;
+        default:
+            cout << "not item";
+            break;
+        }
+    } while (order != 7);
 
-    default:
-        cout << "not item";
-        break;
-    }
     return 0;
 }

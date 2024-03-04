@@ -1,2 +1,9 @@
+int main()
+{
+    batsman cs;
+    
+     cs.readata();
+   
 
-void data()
+    return 0;
+}

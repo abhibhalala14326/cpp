@@ -9,17 +9,39 @@ protected:
     string name;
 
 public:
-   
+    bank(){
+
+    };
+    bank(int account, long balance,string name1)
+    {
+        account_number = account;
+        b = balance;
+        
+        name=name1;
+
+        
+    }
+    void show_data()
+    {
+        cout<<account_number<<endl;
+        cout<<b<<endl;
+        cout<<name;
+    }
 };
 int main()
 {
-
-    bank c1;
-    int chois;
-    c1.data();
-    c1.show();
-    do
-    {
+    bank Bank[n];
+    Bank[1] = bank(101, 20000,"abhi");
+    Bank[2] = bank(102, 30000,"avan");
+    Bank[3] = bank(103, 5000,"akash");
+    Bank[4] = bank(104, 56000,"ronik");
+    int c;
+       do{
+      
+       cout<<"enter the emp number :"<<endl;
+       cin>>banmk[n];
+       
+          
         cout << "< -------------------------------------------------- >" << endl;
         cout << "< -------------------------------------------------- >" << endl;
         cout << "    1.withdra " << endl;
@@ -28,35 +50,32 @@ int main()
         cout << "    4.exit " << endl;
 
         cout << "          <--------- youe chois -------------->" << endl;
-        cin >> chois;
+        cin >> c;
 
-        switch (chois)
+        switch (c)
         {
 
         case 1:
-            c1.data();
-            c1.withdrad();
 
+            
             break;
 
         case 2:
 
-            c1.data();
-            c1.diposit();
+           
             break;
         case 3:
-            c1.data();
-            c1.show();
-            break;
+            
         case 4:
             cout << "GOOD DAY " << endl;
+           
             break;
+           
 
         default:
             cout << "no banking";
             break;
         }
-    } while (chois != 4);
-
+    } while (c != 4);
     return 0;
 }
